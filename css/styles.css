@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+}
+
+.start-page {
+    display: block; /* Avoid using flexbox for the entire page */
+    background: #240350;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    line-height: 1.6;
+}
+
+.container-fluid {
+    position: relative;
+    padding-top: 3rem;
+}
+
+.left-hero h1 {
+    font-size: 5rem;
+}
+
+.circle {
+    position: absolute;
+    background-color: #f0f0f0; /* Whitish color */
+    border-radius: 50%;
+    opacity: 0.3;
+    filter: blur(50px);
+    z-index: -1;
+}
+
+.top-circle {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left-circle {
+    width: 300px;
+    height: 300px;
+    top: 70%;
+    left: -100px;
+}
+
+.right-circle {
+    width: 300px;
+    height: 300px;
+    top: 25%;
+    right: -100px;
+}
+
+.content {
+    padding-bottom: 4rem;
+}
+
+/* Custom Styling for Navbar Toggler Icon */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+
+/* Services Section */
+.service {
+    transition: transform 0.3s ease-in-out;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+}
+
+.service {
+    background: linear-gradient(135deg, #1b1b8f, #240350);
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+}
+
+
+.contact-form-container {
+    background: #6d5c89;
+}
+
+.contact button:hover {
+    background: #0019cc;
+}
+
+.custom-input {
+    height: 50px;
+    border: 2px solid #012953;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+}
+
+.custom-input:focus {
+    outline: none;
+    border-color: #0056b3; /* Darker blue on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+textarea.custom-input {
+    height: auto;
+    min-height: 120px;
+    resize: vertical;
+}
+
+.custom-button {
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+.contact-form-container {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+
+/* Footer Section */
+footer {
+    background: #0000cc;
+    color: white;
+}
+
+.footer-bottom {
+    background: #8a41b5;
+}
+
+footer h5 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #f0f0f0;
+}
+
+footer .social-icons img {
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+footer .social-icons img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .left-hero h1 {
+        font-size: 3rem;
+    }
+
+    .left-hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+}
