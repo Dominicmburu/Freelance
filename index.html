@@ -19,7 +19,7 @@
             <!-- Header Section -->
             <header class="bg-transparent py-4">
                 <nav class="navbar navbar-expand-lg navbar-light container px-3">
-                    <a href="#" class="navbar-brand d-flex align-items-center">
+                    <a href="index.html" class="navbar-brand d-flex align-items-center">
                         <img src="images/logo.png" alt="E-Learning Logo" class="me-3" style="width: 50px;">
                         <span class="text-white">We Love to Help</span>
                     </a>
@@ -29,13 +29,13 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto text-center text-md-start w-100 justify-content-md-end">
                             <li class="nav-item">
-                                <a class="nav-link text-white nav-hover" href="#">Home</a>
+                                <a class="nav-link text-white nav-hover" href="#HomeSection">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white nav-hover" href="#">Services</a>
+                                <a class="nav-link text-white nav-hover" href="#ServicesSection">Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white nav-hover" href="#">Contact Us</a>
+                                <a class="nav-link text-white nav-hover" href="#contactUs">Contact Us</a>
                             </li>
                             <li class="nav-item">
                                 <a class="btn btn-primary text-white" href="#">Get Started</a>
@@ -46,11 +46,11 @@
             </header>
 
             <!-- Hero Section -->
-            <section class="hero py-5">
+            <section class="hero py-5" id="HomeSection">
                 <div class="container d-flex flex-column-reverse flex-md-row align-items-center justify-content-between">
                     <div class="left-hero text-center text-md-start">
                         <h1 class="display-4 text-white mb-4">Change Your Grades With Us</h1>
-                        <p class="text-white-50 mb-4">The most trusted platform for you to get the highest grades. We guarantee you can trust us.</p>
+                        <p class="text-white-50 mb-4">The most trusted platform for you to get the highest grades<br>We guarantee you can trust us</p>
                         <a href="#" class="btn btn-primary btn-lg">Get Started</a>
                     </div>
                     <div class="right-hero mb-4 mb-md-0">
@@ -60,7 +60,7 @@
             </section>
 
             <!-- Services Section -->
-            <section class="services py-5 text-center">
+            <section class="services py-5 text-center" id="ServicesSection">
                 <div class="container">
                     <h2 class="text-white mb-5">Our Services</h2>
                     <div class="row g-4">
@@ -98,7 +98,7 @@
 
 
             <!-- Contact Section -->
-            <section class="contact py-5 text-center">
+            <section class="contact py-5 text-center" id="contactUs">
                 <div class="container">
                     <h2 class="text-white mb-5">Contact Us</h2>
                     <div class="contact-form-container mx-auto bg-light p-4 rounded shadow-sm" style="max-width: 500px;">
@@ -120,28 +120,32 @@
 
         </main>
 
-
         <!-- Footer Section -->
-        <footer class="text-white py-4" style="background-color: #1b1b8f;">
+        <footer class="text-white pt-5" style="background-color: #1b1b8f; padding: 20px 0;">
             <div class="container">
                 <div class="row text-center text-md-start">
+                    <!-- Legal Section -->
                     <div class="col-md-4 mb-4 mb-md-0">
-                        <h5>Legal</h5>
+                        <h5 class="mb-4">Legal</h5>
                         <ul class="list-unstyled">
                             <li><a href="#" class="text-white">Terms and Conditions</a></li>
                             <li><a href="#" class="text-white">Refund Policy</a></li>
                             <li><a href="#" class="text-white">Privacy Policy</a></li>
                         </ul>
                     </div>
+
+                    <!-- Other Section -->
                     <div class="col-md-4 mb-4 mb-md-0">
-                        <h5>Other</h5>
+                        <h5 class="mb-4">Other</h5>
                         <ul class="list-unstyled">
                             <li><a href="#" class="text-white">About Us</a></li>
                         </ul>
                     </div>
+
+                    <!-- Social Media Section -->
                     <div class="col-md-4">
-                        <h5>Social Media</h5>
-                        <div class="d-flex justify-content-around justify-content-md-start">
+                        <h5 class="mb-4">Social Media</h5>
+                        <div class="d-flex justify-content-center justify-content-md-start gap-3">
                             <a href="#"><img src="images/discord.png" alt="Discord" class="img-fluid" style="width: 40px;"></a>
                             <a href="#"><img src="images/whatsapp.png" alt="WhatsApp" class="img-fluid" style="width: 40px;"></a>
                             <a href="#"><img src="images/X.png" alt="X" class="img-fluid" style="width: 40px;"></a>
@@ -149,12 +153,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center mt-4">
-                    <p class="mb-0">WE LOVE TO HELP © COPYRIGHT 2024</p>
-                </div>
             </div>
         </footer>
 
+
+    </div>
+    <div class="footer-bottom text-center py-3 " style="background-color: #8a41b5;">
+        <p class="mb-0">WE LOVE TO HELP © COPYRIGHT 2024</p>
     </div>
 
     <!-- Bootstrap JS -->
