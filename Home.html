@@ -38,7 +38,9 @@
             border-radius: 5px;
             font-size: 0.8rem;
             margin-top: 10px;
-            float: right;
+            text-align: center;
+            width: 100%;
+            /* float: right; */
         }
 
         .notification-item {
@@ -46,6 +48,7 @@
             padding: 10px;
             margin-bottom: 10px;
             border-radius: 5px;
+            word-wrap: break-word;
         }
 
         .dropdown-toggle::after {
@@ -77,14 +80,47 @@
             padding: 4px 6px;
         }
 
+        
+        .circle {
+            position: absolute;
+            background-color: #f0f0f0; /* Whitish color */
+            border-radius: 50%;
+            opacity: 0.3;
+            filter: blur(50px);
+            z-index: -1;
+        }
+
+        .top-circle {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .left-circle {
+            width: 300px;
+            height: 300px;
+            top: 70%;
+            left: -100px;
+        }
+
+        .right-circle {
+            width: 300px;
+            height: 300px;
+            top: 25%;
+            right: -100px;
+        }
+
+
         @media (max-width: 768px) {
             .navbar {
                 padding: 10px;
             }
 
             .nav-link {
-                border-bottom: 2px solid rgb(114, 114, 114); /* Default state */
-                transition: border-color 0.3s; /* Smooth transition */
+                border-bottom: 2px solid rgb(114, 114, 114);
+                transition: border-color 0.3s;
             }
 
             .nav-link:hover, .nav-link.active {
@@ -101,21 +137,24 @@
 
             .dropdown-menu {
                 width: 100%;
+                padding: 10px;
             }
 
             .notification-dropdown {
                 width: auto;
                 padding: 10px;
-                height: auto;
             }
 
             .notification-item {
                 padding: 8px;
                 font-size: 0.9rem;
+                word-wrap: break-word;
             }
 
             .clear-btn {
                 font-size: 0.75rem;
+                padding: 8px 12px;
+                margin-top: 10px;
             }
 
             .btn-logout {
@@ -135,6 +174,9 @@
 
 <body>
 
+    <div class="circle top-circle"></div>
+    <div class="circle left-circle"></div>
+    <div class="circle right-circle"></div>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark px-3 py-3">
         <a class="navbar-brand d-flex align-items-center" href="#">
