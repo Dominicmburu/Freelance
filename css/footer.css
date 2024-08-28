@@ -1,0 +1,68 @@
+/* Footer Styling */
+footer {
+    background-color: #1b1b8f; /* Dark blue for main footer */
+    color: white;
+}
+
+footer h5 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+footer ul li a:hover {
+    color: #f0f0f0; /* Lighter color on hover */
+}
+
+/* Social Media Icons */
+.footer-bottom img {
+    transition: transform 0.3s ease;
+}
+
+.footer-bottom img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background-color: #8a41b5; /* Purple background for the bottom section */
+    color: white;
+    padding: 1rem 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-bottom {
+        text-align: center;
+    }
+
+    .d-flex {
+        justify-content: center !important; /* Center the social icons on smaller screens */
+    }
+
+    .gap-3 {
+        gap: 1rem !important; /* Space between icons */
+    }
+}

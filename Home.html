@@ -9,6 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/footer.css">
 
     <style>
         
@@ -70,15 +71,15 @@
     <div class="task-form mt-5">
         <form>
             <div class="mb-3">
-                <label for="taskName">Task Name</label>
+                <label for="taskName"><span style="color: red; font-weight: bold;">*</span>Task Name</label>
                 <input type="text" id="taskName" placeholder="Enter task name">
             </div>
             <div class="mb-3">
-                <label for="taskDescription">Task Description</label>
+                <label for="taskDescription"><span style="color: red; font-weight: bold;">*</span>Task Description</label>
                 <textarea id="taskDescription" rows="3" placeholder="Enter task description"></textarea>
             </div>
             <div class="mb-3">
-                <label>Education Level</label>
+                <label><span style="color: red; font-weight: bold;">*</span>Education Level</label>
                 <div class="btn-group btn-group-toggle d-flex flex-wrap" data-toggle="buttons">
                     <label class="btn active">
                         <input type="radio" name="education" id="highSchool" autocomplete="off"> High School
@@ -101,7 +102,7 @@
                 </div>
             </div>
             <div class="mb-3">
-                <label>Task Type</label>
+                <label><span style="color: red; font-weight: bold;">*</span>Task Type</label>
                 <div class="btn-group btn-group-toggle d-flex flex-wrap" data-toggle="buttons">
                     <label class="btn active">
                         <input type="radio" name="taskType" id="assignment" autocomplete="off"> Assignment
@@ -122,7 +123,7 @@
             </div>
             <div class="mb-3">
                 <label>Upload Files</label>
-                <div class="file-note">*Please zip all your files and upload them here</div>
+                <div class="file-note"><span style="color: red; font-weight: bold;">*</span>Please zip all your files and upload it here</div>
                 <div class="file-upload">
                     <label for="fileUpload" class="btn">
                         <input type="file" id="fileUpload"> File
@@ -135,7 +136,7 @@
                 <input type="number" id="amount" placeholder="Enter amount">
             </div>
             <div class="mb-3">
-                <label for="deadline">Deadline Date</label>
+                <label for="deadline"><span style="color: red; font-weight: bold;">*</span>Deadline Date</label>
                 <input type="date" id="deadline">
             </div>
             <button type="submit" class="post-btn">POST</button>
@@ -172,6 +173,65 @@
         </div>
     </div>
 
+
+    <!-- Customer Support Chat Section -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            Chat Support
+            <i class="fa-solid fa-circle-xmark close-chat"></i>
+        </div>
+        <div class="chat-messages">
+            <div class="message">Hello</div>
+            <div class="message">How can I assist you?</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Write something...">
+            <button type="button"><i class="fa fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <button class="chat-toggle" id="chatToggle">
+        Chat with us
+        <i class="fa fa-times"></i>
+    </button>
+
+    <!-- Footer Section -->
+    <footer class="text-white pt-5" style="background-color: #1b1b8f; padding: 20px 0;">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <!-- Legal Section -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-4">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Terms and Conditions</a></li>
+                        <li><a href="#" class="text-white">Refund Policy</a></li>
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Other Section -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-4">Other</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Section -->
+                <div class="col-md-4">
+                    <h5 class="mb-4">Social Media</h5>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="#"><img src="images/discord.png" alt="Discord" class="img-fluid" style="width: 40px;"></a>
+                        <a href="#"><img src="images/whatsapp.png" alt="WhatsApp" class="img-fluid" style="width: 40px;"></a>
+                        <a href="#"><img src="images/X.png" alt="X" class="img-fluid" style="width: 40px;"></a>
+                        <a href="#"><img src="images/ig.png" alt="Instagram" class="img-fluid" style="width: 40px;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
