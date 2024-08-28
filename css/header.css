@@ -1,0 +1,160 @@
+body {
+    background-color: #240350;
+    color: white;
+}
+
+.navbar {
+    background-color: #1b1b8f;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.notification-dropdown {
+    background-color: #1b1b8f;
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+}
+
+.clear-btn {
+    background-color: #ff4a4a;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    /* float: right; */
+}
+
+.notification-item {
+    background-color: #3a36d5;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.btn-logout {
+    background-color: #0056ff;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.btn-logout:hover {
+    background-color: #0040cc;
+}
+
+.fa-bell {
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: 1px;
+    right: -20px;
+    font-size: 0.75rem;
+    padding: 4px 6px;
+}
+
+
+.circle {
+    position: absolute;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    opacity: 0.3;
+    filter: blur(50px);
+    z-index: -1;
+}
+
+.top-circle {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left-circle {
+    width: 300px;
+    height: 300px;
+    top: 70%;
+    left: -100px;
+}
+
+.right-circle {
+    width: 300px;
+    height: 300px;
+    top: 25%;
+    right: 0;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .nav-link {
+        border-bottom: 2px solid rgb(114, 114, 114);
+        transition: border-color 0.3s;
+    }
+
+    .nav-link:hover, .nav-link.active {
+        border-bottom: 2px solid white;
+    }
+
+    #navbarNav .navbar-item{
+        border-bottom: 2px solid white;
+    }
+
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .notification-dropdown {
+        width: auto;
+        padding: 10px;
+    }
+
+    .notification-item {
+        padding: 8px;
+        font-size: 0.9rem;
+        word-wrap: break-word;
+    }
+
+    .clear-btn {
+        font-size: 0.75rem;
+        padding: 8px 12px;
+        margin-top: 10px;
+    }
+
+    .btn-logout {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        margin: 20px auto;
+        width: 100%;
+    }
+
+    .badge {
+        font-size: 0.75rem;
+        right: inherit;
+    }
+}

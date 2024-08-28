@@ -1,0 +1,125 @@
+.task-form {
+    background-color: #350d66;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 50px auto;
+    max-width: 800px;
+}
+
+.task-form input[type="text"],
+.task-form textarea,
+.task-form input[type="number"],
+.task-form input[type="date"] {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.task-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.task-form .btn-group-toggle .btn {
+    background-color: #ffffff;
+    color: #4a2070;
+    border: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+}
+
+.task-form .btn-group-toggle .btn.active {
+    background-color: #6b35a6;
+    color: #000;
+}
+
+.task-form .file-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.task-form .file-upload input[type="file"] {
+    display: none;
+}
+
+.task-form .file-upload label {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #44156d;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.task-form .file-upload label:hover {
+    color: #ff4a4a;
+}
+
+.task-form .file-upload .remove-file {
+    background-color: #ff4a4a;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-form .post-btn {
+    background-color: #0056ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%;
+    border: none;
+}
+
+.task-form .post-btn:hover {
+    background-color: #0040cc;
+}
+
+.task-form .file-note {
+    color: #ff4a4a;
+    font-size: 0.9rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .task-form {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .task-form .btn-group-toggle .btn {
+        margin-right: 0;
+        margin-bottom: 5px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .task-form .file-upload {
+        flex-direction: column;
+    }
+
+    .task-form .file-upload label,
+    .task-form .file-upload .remove-file {
+        width: 100%;
+        text-align: center;
+    }
+
+    .task-form .file-upload label {
+        margin-bottom: 10px;
+    }
+}
