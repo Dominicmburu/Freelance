@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Task Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/task.css">
 
     <style>
         
@@ -67,111 +67,104 @@
     </nav>
 
 
-    <!-- Task Form -->
-    <div class="task-form mt-5">
-        <form>
-            <div class="mb-3">
-                <label for="taskName"><span style="color: red; font-weight: bold;">*</span>Task Name</label>
-                <input type="text" id="taskName" placeholder="Enter task name">
-            </div>
-            <div class="mb-3">
-                <label for="taskDescription"><span style="color: red; font-weight: bold;">*</span>Task Description</label>
-                <textarea id="taskDescription" rows="3" placeholder="Enter task description"></textarea>
-            </div>
-            <div class="mb-3">
-                <label><span style="color: red; font-weight: bold;">*</span>Education Level</label>
-                <div class="btn-group btn-group-toggle d-flex flex-wrap" data-toggle="buttons">
-                    <label class="btn active">
-                        <input type="radio" name="education" id="highSchool" autocomplete="off"> High School
-                    </label>
-                    <label class="btn">
-                        <input type="radio" name="education" id="undergraduate" autocomplete="off"> Undergraduate
-                    </label>
-                    <label class="btn">
-                        <input type="radio" name="education" id="postGraduate" autocomplete="off"> Post Graduate
-                    </label>
-                    <label class="btn">
-                        <input type="radio" name="education" id="masters" autocomplete="off"> Masters
-                    </label>
-                    <label class="btn">
-                        <input type="radio" name="education" id="phd" autocomplete="off"> Ph.D
-                    </label>
-                    <label class="btn">
-                        <input type="radio" name="education" id="professor" autocomplete="off"> Professor
-                    </label>
-                </div>
-            </div>
-            <div class="mb-3">
-                <label><span style="color: red; font-weight: bold;">*</span>Task Type</label>
-                <div class="btn-group btn-group-toggle d-flex flex-wrap" data-toggle="buttons">
-                    <label class="btn active">
-                        <input type="radio" name="taskType" id="assignment" autocomplete="off"> Assignment
-                    </label>
-                    <label class="btn">
-                        <input type="radio" name="taskType" id="test" autocomplete="off"> Test
-                    </label>
-                    <label class="btn">
-                        <input type="radio" name="taskType" id="project" autocomplete="off"> Project
-                    </label>
-                    <label class="btn">
-                        <input type="radio" name="taskType" id="writing" autocomplete="off"> Writing
-                    </label>
-                    <label class="btn">
-                        <input type="radio" name="taskType" id="exam" autocomplete="off"> Exam
-                    </label>
-                </div>
-            </div>
-            <div class="mb-3">
-                <label>Upload Files</label>
-                <div class="file-note"><span style="color: red; font-weight: bold;">*</span>Please zip all your files and upload it here</div>
-                <div class="file-upload">
-                    <label for="fileUpload" class="btn">
-                        <input type="file" id="fileUpload"> File
-                    </label>
-                    <span class="remove-file">X</span>
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="amount">Amount</label>
-                <input type="number" id="amount" placeholder="Enter amount">
-            </div>
-            <div class="mb-3">
-                <label for="deadline"><span style="color: red; font-weight: bold;">*</span>Deadline Date</label>
-                <input type="date" id="deadline">
-            </div>
-            <button type="submit" class="post-btn">POST</button>
-        </form>
-    </div>
 
+    <!-- Task Items -->
+    <div class="container task-container mt-5 mb-5">
+        <div class="task-item-c">
+            <div class="task-item-header-th">
+                <h5>Task name</h5>
+                <h5>Prof Name</h5>
+                <h5 class="status">Status</h5>
+                <h5><i class="fas fa-plus toggle-icon" style="font-size: 20px;"></i></h5>
+            </div>
+            <div class="task-item-content">
+                <div class="progressbar">
+                    <div class="progress" id="progress1"></div>
+                    <div class="progress-step progress-step-active" data-title="Task Confirmed"></div>
+                    <div class="progress-step progress-step-active" data-title="Working on Your Task"></div>
+                    <div class="progress-step progress-step-active" data-title="Completed"></div>
+                </div>
+                <div class="declined-section" style="display: none;">
+                    <h6>Task Declined</h6>
+                    <textarea class="reason-textarea" rows="4" readonly>Here is the reason</textarea>
+                </div>
+                <div class="task-buttons">
+                    <button class="prof-chat-toggle-btn">Chat with Professor</button>
+                    <button>Withdraw Task</button>
+                </div>
 
-    <!-- Other Services Section -->
-    <div class="services-section">
-        <h4>Other Services</h4>
-        <p>Coming soon ...</p>
-        <div class="row justify-content-center">
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="service-item">
-                    <img src="images/ChatGPT-Logo.png" alt="Premium ChatGPT">
-                    <h5>Premium ChatGPT</h5>
-                    <a href="#" class="access-btn">ACCESS</a>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="service-item">
-                    <img src="images/N-Netflix-Logo.png" alt="Netflix">
-                    <h5>Netflix</h5>
-                    <a href="#" class="access-btn">ACCESS</a>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="service-item">
-                    <img src="images/spotify-icon.png" alt="Spotify">
-                    <h5>Spotify</h5>
-                    <a href="#" class="access-btn">ACCESS</a>
+                <div class="prof-chat-area" style="display: none;">
+                    <div class="prof-chat-messages">
+                        <div class="professor">How can I help you with the task?</div>
+                        <div class="you">You: I need some clarification on the instructions.</div>
+                    </div>
+                    <div class="prof-chat-input">
+                        <input type="text" placeholder="Type a message...">
+                        <button type="button" class="prof-send-message-btn">Send</button>
+                    </div>
                 </div>
             </div>
         </div>
+
+
+        <div class="task-item-c">
+            <div class="task-item-header-th">
+                <h5>Task name</h5>
+                <h5>Prof Name</h5>
+                <h5 class="status">Status</h5>
+                <h5><i class="fas fa-plus toggle-icon" style="font-size: 20px;"></i></h5>
+            </div>
+            <div class="task-item-content">
+                <div class="progressbar">
+                    <div class="progress" id="progress2"></div>
+                    <div class="progress-step progress-step-active" data-title="Task Confirmed"></div>
+                    <div class="progress-step progress-step-active" data-title="Working on Your Task"></div>
+                    <div class="progress-step" data-title="Completed"></div>
+                </div>
+                <div class="declined-section" style="display: none;">
+                    <h6>Task Declined</h6>
+                    <textarea class="reason-textarea" rows="4" readonly>Here is the reason</textarea>
+                </div>
+                <div class="task-buttons">
+                    <button>Chat with Professor</button>
+                    <button>Withdraw Task</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="task-item-c">
+            <div class="task-item-header-th">
+                <h5>Task name</h5>
+                <h5>Prof Name</h5>
+                <h5 class="status">Status</h5>
+                <h5><i class="fas fa-plus toggle-icon" style="font-size: 20px;"></i></h5>
+            </div>
+            <div class="task-item-content">
+                <div class="progressbar">
+                    <div class="progress" id="progress3"></div>
+                    <div class="progress-step progress-step-active" data-title="Task Confirmed"></div>
+                    <div class="progress-step" data-title="Working on Your Task"></div>
+                    <div class="progress-step" data-title="Completed"></div>
+                </div>
+                <div class="declined-section" style="display: none;">
+                    <h6>Task Declined</h6>
+                    <textarea class="reason-textarea" rows="4" readonly>Here is the reason</textarea>
+                </div>
+                <div class="task-buttons">
+                    <button>Chat with Professor</button>
+                    <button>Withdraw Task</button>
+                </div>
+            </div>
+        </div>
+
+
+        
+
+        <!-- Add more task-item divs here for additional tasks -->
     </div>
+
+
 
 
     <!-- Customer Support Chat Section -->
@@ -236,8 +229,9 @@
         <p class="mb-0">WE LOVE TO HELP © COPYRIGHT 2024</p>
     </div>
 
-    <script src="js/home.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<script src="js/home.js"></script>
+<script src="js/task.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>

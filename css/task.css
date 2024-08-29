@@ -1,0 +1,222 @@
+body {
+    /* background-color: #f8f9fa; */
+    color: #000;
+}
+
+.task-item-c {
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+    background-color: #0f0dad;
+    padding: 5px;
+}
+
+.task-item-header-th {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: rgb(0, 4, 255);
+    padding: 5px 15px;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.task-item-header-th .status{
+    background-color: #0c8501;
+    border-radius: 5px;
+    padding: 10px 40px;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.task-item-header-th h5 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.task-item-content {
+    display: none;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #000;
+}
+.progressbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 2rem 35px;    
+}
+
+.progressbar::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+    z-index: -1;
+}
+
+.progress {
+    background-color: #28a745;
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 0%; /* Adjust this width dynamically using JavaScript */
+}
+
+.progress-step {
+    width: 30px;
+    height: 30px;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+}
+
+.progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+    color: white;
+}
+
+.progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: #666;
+    white-space: nowrap;
+}
+
+.progress-step-active {
+    background-color: #28a745;
+    color: #f3f3f3;
+}
+
+.reason-textarea {
+    background-color: #f8f9fa;
+    color: #000;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.task-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+.task-buttons button {
+    background-color: #0056ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.task-buttons button:hover {
+    background-color: #0040cc;
+}
+
+.prof-chat-area {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.prof-chat-messages {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.prof-chat-messages .professor {
+    background-color: #e9ecef;
+    align-self: flex-start;
+    padding: 8px;
+    border-radius: 5px;
+    max-width: 70%;
+    color: #000;
+}
+
+.prof-chat-messages .you {
+    background-color: #d1e7dd;
+    align-self: flex-end;
+    padding: 8px;
+    border-radius: 5px;
+    max-width: 70%;
+    color: #000;
+}
+
+.prof-chat-input {
+    display: flex;
+    gap: 5px;
+}
+
+.prof-chat-input input[type="text"] {
+    flex-grow: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.prof-chat-input button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #0056ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.prof-chat-input button:hover {
+    background-color: #0040cc;
+}
+
+
+@media (max-width: 768px) {
+    .task-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .task-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .progressbar {
+        margin: 2rem 20px;    
+    }
+
+    .progress-step::after {
+        font-size: 0.75rem;
+    }
+}

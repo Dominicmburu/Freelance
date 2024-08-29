@@ -158,3 +158,98 @@ body {
         right: inherit;
     }
 }
+
+/* Customer Support Chat */
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: none;
+    /* Hidden by default */
+    z-index: 1000;
+}
+
+.chat-header {
+    background-color: #000055;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+.chat-header .close-chat {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.chat-messages {
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+    background-color: #e0e0e0;
+    color: #000000;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 0;
+    outline: none;
+}
+
+.chat-input button {
+    background-color: #2500f7;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(32, 32, 32);
+    border: 1px solid #0004ff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.chat-toggle i {
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .chat-container {
+        width: 90%;
+        right: 5%;
+    }
+
+    .chat-toggle {
+        width: auto;
+        padding: 10px;
+        right: 5%;
+    }
+}
