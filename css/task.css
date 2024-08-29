@@ -219,4 +219,12 @@ body {
     .progress-step::after {
         font-size: 0.75rem;
     }
+
+    .prof-chat-input input[type="text"] {
+        width: 80%;
+    }
+
+    .prof-chat-input button {
+        width: 20%;
+    }
 }

@@ -126,8 +126,19 @@
                     <textarea class="reason-textarea" rows="4" readonly>Here is the reason</textarea>
                 </div>
                 <div class="task-buttons">
-                    <button>Chat with Professor</button>
+                    <button class="prof-chat-toggle-btn">Chat with Professor</button>
                     <button>Withdraw Task</button>
+                </div>
+
+                <div class="prof-chat-area" style="display: none;">
+                    <div class="prof-chat-messages">
+                        <div class="professor">How can I help you with the task?</div>
+                        <div class="you">You: I need some clarification on the instructions.</div>
+                    </div>
+                    <div class="prof-chat-input">
+                        <input type="text" placeholder="Type a message...">
+                        <button type="button" class="prof-send-message-btn">Send</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -147,13 +158,20 @@
                     <div class="progress-step" data-title="Working on Your Task"></div>
                     <div class="progress-step" data-title="Completed"></div>
                 </div>
-                <div class="declined-section" style="display: none;">
-                    <h6>Task Declined</h6>
-                    <textarea class="reason-textarea" rows="4" readonly>Here is the reason</textarea>
-                </div>
                 <div class="task-buttons">
-                    <button>Chat with Professor</button>
+                    <button class="prof-chat-toggle-btn">Chat with Professor</button>
                     <button>Withdraw Task</button>
+                </div>
+
+                <div class="prof-chat-area" style="display: none;">
+                    <div class="prof-chat-messages">
+                        <div class="professor">How can I help you with the task?</div>
+                        <div class="you">You: I need some clarification on the instructions.</div>
+                    </div>
+                    <div class="prof-chat-input">
+                        <input type="text" placeholder="Type a message...">
+                        <button type="button" class="prof-send-message-btn">Send</button>
+                    </div>
                 </div>
             </div>
         </div>
