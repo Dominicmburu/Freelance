@@ -1,0 +1,106 @@
+body {
+    color: #000;
+}
+
+.section-header {
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.section-content {
+    background-color: #6800ac;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    /* display: none; */
+}
+
+.section-header h5 {
+    margin: 0;
+    color: #000;
+}
+
+.update-profile-btn,
+.save-card-btn,
+.update-card-btn,
+.delete-card-btn {
+    background-color: #0056ff;
+    color: white;
+    width: 100%;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#cardTypeImage img,
+#savedCardImage img {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.update-profile-btn:hover,
+.save-card-btn:hover,
+.update-card-btn:hover,
+.delete-card-btn:hover {
+    background-color: #0040cc;
+}
+
+.bg{
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    min-width: 100px;
+    justify-content: center; 
+}
+
+.badge-success {
+    background-color: #28a745;
+}
+
+.badge-warning {
+    background-color: #ffc107;
+}
+
+.badge-danger {
+    background-color: #dc3545;
+}
+
+/* Custom styling for table */
+.table thead th {
+    background-color: #343a40;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.btn-download {
+    background-color: #1b1b8f;
+    border: none;
+}
+
+.btn-download:hover {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+}
+
+@media (max-width: 768px) {
+    .update-profile-btn,
+    .save-card-btn,
+    .update-card-btn,
+    .delete-card-btn,
+    .add-money-btn {
+        font-size: 12px;
+    }
+}
