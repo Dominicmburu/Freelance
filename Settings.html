@@ -86,8 +86,10 @@
                 
                 <form action="">
                     <div class="new-card-entry" method="POST" id="cardForm">
-                        <input type="text" id="cardNumberInput" class="form-control mb-3" placeholder="Card Number">
-                        <div id="cardTypeImage"></div> <!-- Image will be shown here based on card type -->
+                        <div class="cn form-control mb-3">
+                            <input type="text" id="cardNumberInput" class="form-control" placeholder="Card Number">
+                            <div id="cardTypeImage" class="cardTypeImage" style="display: none;"></div>
+                        </div>
                         <input type="text" class="form-control mb-3" placeholder="Expiry Date (MM/YY)">
                         <input type="text" class="form-control mb-3" placeholder="CVV">
                         <button class="btn save-card-btn">SAVE CARD DETAILS</button>

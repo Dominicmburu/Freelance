@@ -50,6 +50,37 @@ body {
     background-color: #0040cc;
 }
 
+.new-card-entry .cn.form-control{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+.new-card-entry .cn .cardTypeImage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 60px;
+    border-radius: 9px;
+    border: 1px solid #939494;
+    line-height: 40px;
+    /* padding-top: 8px; */
+}
+
+#cardNumberInput{
+    flex: 1;
+}
+
+.new-card-entry .cn img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: fill;
+
+}
+
 .bg{
     display: inline-flex;
     align-items: center;

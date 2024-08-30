@@ -24,3 +24,5 @@ card 2: show the card image type, and card number with stars for security and be
                 <button class="btn delete-card-btn">DELETE CARD</button>
             </div>
         </div>
+
+        4783939001293061

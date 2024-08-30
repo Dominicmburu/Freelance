@@ -25,7 +25,14 @@ cardNumberInput.addEventListener('input', function() {
     }
 
     // Display card type image
-    cardTypeImage.innerHTML = cardType ? `<img src="images/${cardType}.png" alt="${cardType}" style="width: 50px;">` : '';
+    // cardTypeImage.innerHTML = cardType ? `<img src="images/${cardType}.png" alt="${cardType}">` : '';
+    if (cardType) {
+        cardTypeImage.innerHTML = `<img src="images/${cardType}.png" alt="${cardType}">`;
+        cardTypeImage.style.display = 'block';  // Show the card type image
+    } else {
+        cardTypeImage.innerHTML = '';
+        cardTypeImage.style.display = 'none';
+    }
 });
 
 // Example: Showing saved card details after saving the card
