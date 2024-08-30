@@ -73,7 +73,15 @@
         <div class="task-item-c">
             <div class="task-item-header-th">
                 <h5>Task name</h5>
-                <h5>Prof Name</h5>
+                <h5 class="prof-name">Prof Name
+                    <div class="rates static-rating-4">
+                        <i class="fa fa-star" data-value="1"></i>
+                        <i class="fa fa-star" data-value="2"></i>
+                        <i class="fa fa-star" data-value="3"></i>
+                        <i class="fa fa-star" data-value="4"></i>
+                        <i class="fa fa-star" data-value="5"></i>
+                    </div>
+                </h5>
                 <h5 class="status">Status</h5>
                 <h5><i class="fas fa-plus toggle-icon" style="font-size: 20px;"></i></h5>
             </div>
@@ -89,7 +97,10 @@
                     <textarea class="reason-textarea" rows="4" readonly>Here is the reason</textarea>
                 </div>
                 <div class="task-buttons">
-                    <button class="prof-chat-toggle-btn">Chat with Professor</button>
+                    <button class="prof-chat-toggle-btn">
+                        Chat with Professor
+                        <span class="online-indicator"></span>
+                    </button>
                     <button>Withdraw Task</button>
                 </div>
 
@@ -110,7 +121,15 @@
         <div class="task-item-c">
             <div class="task-item-header-th">
                 <h5>Task name</h5>
-                <h5>Prof Name</h5>
+                <h5 class="prof-name">Prof Name
+                    <div class="rates static-rating-4">
+                        <i class="fa fa-star" data-value="1"></i>
+                        <i class="fa fa-star" data-value="2"></i>
+                        <i class="fa fa-star" data-value="3"></i>
+                        <i class="fa fa-star" data-value="4"></i>
+                        <i class="fa fa-star" data-value="5"></i>
+                    </div>
+                </h5>
                 <h5 class="status">Status</h5>
                 <h5><i class="fas fa-plus toggle-icon" style="font-size: 20px;"></i></h5>
             </div>
@@ -126,7 +145,10 @@
                     <textarea class="reason-textarea" rows="4" readonly>Here is the reason</textarea>
                 </div>
                 <div class="task-buttons">
-                    <button class="prof-chat-toggle-btn">Chat with Professor</button>
+                    <button class="prof-chat-toggle-btn">
+                        Chat with Professor
+                        <span class="online-indicator"></span>
+                    </button>
                     <button>Withdraw Task</button>
                 </div>
 
@@ -147,7 +169,15 @@
         <div class="task-item-c">
             <div class="task-item-header-th">
                 <h5>Task name</h5>
-                <h5>Prof Name</h5>
+                <h5 class="prof-name">Prof Name
+                    <div class="rates static-rating-4">
+                        <i class="fa fa-star" data-value="1"></i>
+                        <i class="fa fa-star" data-value="2"></i>
+                        <i class="fa fa-star" data-value="3"></i>
+                        <i class="fa fa-star" data-value="4"></i>
+                        <i class="fa fa-star" data-value="5"></i>
+                    </div>
+                </h5>
                 <h5 class="status">Status</h5>
                 <h5><i class="fas fa-plus toggle-icon" style="font-size: 20px;"></i></h5>
             </div>
@@ -159,7 +189,10 @@
                     <div class="progress-step" data-title="Completed"></div>
                 </div>
                 <div class="task-buttons">
-                    <button class="prof-chat-toggle-btn">Chat with Professor</button>
+                    <button class="prof-chat-toggle-btn">
+                        Chat with Professor
+                        <span class="online-indicator"></span>
+                    </button>
                     <button>Withdraw Task</button>
                 </div>
 
@@ -175,12 +208,110 @@
                 </div>
             </div>
         </div>
-
-
-        
-
-        <!-- Add more task-item divs here for additional tasks -->
     </div>
+
+
+    <!-- history -->
+
+    <div class="container history-section mt-5">
+        <h4 class="text-white">History</h4>
+    
+        <div class="history-item mb-3 p-3 rounded bg-light">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-3">Task name</div>
+                <div class="col-12 col-md-3">Prof Name</div>
+                <div class="col-4 col-md-2 mt-2 mt-md-0">
+                    <button class="btns btn btn-dark w-100">Download</button>
+                </div>
+                <div class="col-4 col-md-2 mt-2 mt-md-0">
+                    <button class="btns btn btn-success w-100">Completed</button>
+                </div>
+                <div class="col-4 col-md-2 mt-2 mt-md-0">
+                    <button class="btns btn btn-info w-100 review-btn">Review</button>
+                </div>
+            </div>
+    
+            <div class="review-section mt-3" style="display: none;">
+                <textarea class="form-control mb-3 review-text" placeholder="Write here..."></textarea>
+                <div class="d-flex align-items-center mb-3">
+                    <span class="me-2">Rate the Professor:</span>
+                    <div class="stars">
+                        <i class="fa fa-star" data-value="1"></i>
+                        <i class="fa fa-star" data-value="2"></i>
+                        <i class="fa fa-star" data-value="3"></i>
+                        <i class="fa fa-star" data-value="4"></i>
+                        <i class="fa fa-star" data-value="5"></i>
+                    </div>
+                </div>
+                <button class="btn btn-primary submit-review-btn">Submit Review</button>
+            </div>
+        </div>
+    
+        <div class="history-item mb-3 p-3 rounded bg-light">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-3">Task name</div>
+                <div class="col-12 col-md-3">Prof Name</div>
+                <div class="col-4 col-md-2 mt-2 mt-md-0">
+                    <button class="btns btn btn-dark w-100">Download</button>
+                </div>
+                <div class="col-4 col-md-2 mt-2 mt-md-0">
+                    <button class="btns btn btn-danger w-100">Declined</button>
+                </div>
+                <div class="col-4 col-md-2 mt-2 mt-md-0">
+                    <button class="btns btn btn-info w-100 review-btn">Review</button>
+                </div>
+            </div>
+    
+            <div class="review-section mt-3" style="display: none;">
+                <textarea class="form-control mb-3 review-text" placeholder="Write here..."></textarea>
+                <div class="d-flex align-items-center mb-3">
+                    <span class="me-2">Rate the Professor:</span>
+                    <div class="stars">
+                        <i class="fa fa-star" data-value="1"></i>
+                        <i class="fa fa-star" data-value="2"></i>
+                        <i class="fa fa-star" data-value="3"></i>
+                        <i class="fa fa-star" data-value="4"></i>
+                        <i class="fa fa-star" data-value="5"></i>
+                    </div>
+                </div>
+                <button class="btn btn-primary submit-review-btn">Submit Review</button>
+            </div>
+        </div>
+
+
+        <div class="history-item mb-3 p-3 rounded bg-light">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-3">Task name</div>
+                <div class="col-12 col-md-3">Prof Name</div>
+                <div class="col-4 col-md-2 mt-2 mt-md-0">
+                    <button class="btns btn btn-dark w-100">Download</button>
+                </div>
+                <div class="col-4 col-md-2 mt-2 mt-md-0">
+                    <button class="btns btn btn-danger w-100">Declined</button>
+                </div>
+                <div class="col-4 col-md-2 mt-2 mt-md-0">
+                    <button class="btns btn btn-info w-100 review-btn">Review</button>
+                </div>
+            </div>
+    
+            <div class="review-section mt-3" style="display: none;">
+                <textarea class="form-control mb-3 review-text" placeholder="Write here..."></textarea>
+                <div class="d-flex align-items-center mb-3">
+                    <span class="me-2">Rate the Professor:</span>
+                    <div class="stars">
+                        <i class="fa fa-star" data-value="1"></i>
+                        <i class="fa fa-star" data-value="2"></i>
+                        <i class="fa fa-star" data-value="3"></i>
+                        <i class="fa fa-star" data-value="4"></i>
+                        <i class="fa fa-star" data-value="5"></i>
+                    </div>
+                </div>
+                <button class="btn btn-primary submit-review-btn">Submit Review</button>
+            </div>
+        </div>
+    </div>
+    
+
 
 
 

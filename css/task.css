@@ -200,11 +200,77 @@ body {
     background-color: #0040cc;
 }
 
+/* Styles for the "online" indicator circle */
+.online-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: red; /* Default color when offline */
+    border-radius: 50%;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.online-indicator.online {
+    background-color: #00ff00; /* Green color when online */
+}
+
+
+.stars {
+    display: flex;
+    gap: 5px;
+}
+
+.stars .fa-star {
+    color: #ccc;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.stars .fa-star.checked {
+    color: #ffd700;
+}
+
+.review-section {
+    background-color: #5b1e9c;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+}
+
+.submit-review-btn {
+    background-color: #4a3f9b;
+    color: white;
+    border-radius: 5px;
+}
+
+.submit-review-btn:hover {
+    background-color: #3a2f7b;
+}
+
+.prof-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rates {
+    display: flex;
+    gap: 3px;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.rates .fa-star {
+    color: #ccc;
+}
 
 @media (max-width: 768px) {
-    .task-item-header {
-        flex-direction: column;
-        align-items: flex-start;
+    .task-item-header-th {
+        font-size: 12px;
+    }
+
+    .task-item-header-th .status{
+        padding: 10px 20px;
     }
 
     .task-buttons {
@@ -226,5 +292,19 @@ body {
 
     .prof-chat-input button {
         width: 20%;
+    }
+
+    .btns {
+        font-size: 13px; 
+    }
+
+    .prof-name{
+        flex-direction: column;
+    }
+
+    .rates {
+        gap: 1px;
+        margin: 0px;
+        font-size: 12px;
     }
 }

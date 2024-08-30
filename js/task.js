@@ -85,6 +85,55 @@ function addProfessorMessage(message) {
 
 addProfessorMessage('This is a professor message.');
 
+// Function to update the online status indicator
+function updateOnlineStatus(isOnline) {
+    const onlineIndicators = document.querySelectorAll('.online-indicator');
+    
+    onlineIndicators.forEach(indicator => {
+        if (isOnline) {
+            indicator.classList.add('online');
+        } else {
+            indicator.classList.remove('online');
+        }
+    });
+}
+
+// Example: Simulate professor being online
+setTimeout(() => {
+    updateOnlineStatus(true); // Set to true when the professor is online
+}, 2000);
+
+// Example: Simulate professor going offline
+setTimeout(() => {
+    updateOnlineStatus(false); // Set to false when the professor is offline
+}, 10000);
+
+
+
+document.querySelectorAll('.review-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const reviewSection = this.closest('.history-item').querySelector('.review-section');
+        reviewSection.style.display = reviewSection.style.display === 'block' ? 'none' : 'block';
+    });
+});
+
+document.querySelectorAll('.stars .fa-star').forEach(star => {
+    star.addEventListener('click', function () {
+        const stars = this.parentElement.querySelectorAll('.fa-star');
+        const ratingValue = this.getAttribute('data-value');
+        
+        stars.forEach(star => {
+            star.classList.remove('checked');
+        });
+
+        for (let i = 0; i < ratingValue; i++) {
+            stars[i].classList.add('checked');
+        }
+    });
+});
+
+
+
 
 
 
