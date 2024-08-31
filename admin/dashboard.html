@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: none;
+            background-color: #343a40;
+            padding: 10px;
+            color: #ffffff;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+        .header.shadow {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            height: 100vh;
+            background-color: #343a40;
+            position: fixed;
+            width: 220px;
+            top: 0;
+            left: 0;
+            padding-top: 60px;
+            transition: all 0.3s;
+        }
+
+        .sidebar.collapsed {
+            left: -100%;
+            position: absolute;
+        }
+
+        .sidebar .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-align: center;
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .sidebar .nav-link {
+            color: #ffffff;
+            margin-bottom: 5px;
+            padding: 9px 20px;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .sidebar .nav-link:not(:last-child) {
+            border-bottom: 1px solid #afafaf;
+        }
+
+        .sidebar .nav-link.active {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .sidebar .nav-link:hover {
+            background-color: #495057;
+        }
+
+        .content {
+            margin-left: 240px;
+            padding: 40px;
+            transition: margin-left 0.3s;
+            flex: 1;
+        }
+
+        .content.collapsed {
+            margin-left: 0;
+        }
+
+        .dashboard-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .dashboard-info .info-box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            width: 23%;
+        }
+
+        .dashboard-info .info-box i {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-info .info-box h5 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .dashboard-info .info-box p {
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .card-header {
+            background-color: #495057;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-bottom: none;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .toggle-btn {
+            display: none;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                display: block;
+                padding: 15px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .toggle-btn {
+                display: block;
+            }
+
+            .sidebar {
+                left: -100%;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                padding-top: 60px;
+            }
+
+            .content {
+                margin-left: 0;
+                padding-top: 60px;
+            }
+
+            .dashboard-info .info-box {
+                width: 100%;
+            }
+
+            .sidebar.collapsed {
+                left: 0;
+            }
+
+            .content.collapsed {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header for Small Screens -->
+    <div class="header shadow">
+        Admin Dashboard
+        <i class="fa fa-bars toggle-btn" id="toggle-btn"></i>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a class="navbar-brand" href="#">Admin Dashboard</a>
+        <nav class="nav flex-column">
+            <a class="nav-link active" href="dashboard.html">Dashboard</a>
+            <a class="nav-link" href="users.html">User Management</a>
+            <a class="nav-link" href="tasks.html">Task Management</a>
+            <a class="nav-link" href="payments.html">Payment Management</a>
+            <a class="nav-link" href="content.html">Content Management</a>
+            <a class="nav-link" href="reports.html">Reports & Analytics</a>
+            <a class="nav-link" href="settings.html">Settings</a>
+            <a class="nav-link" href="support.html">Support Management</a>
+            <a class="nav-link" href="audit.html">Audit Logs</a>
+            <a class="nav-link" href="access_control.html">Access Control</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content" id="content">
+        <h1>Welcome to the Admin Dashboard</h1>
+        <p>Use the navigation menu to access different sections of the admin panel.</p>
+
+        <div class="dashboard-info">
+            <div class="info-box">
+                <i class="fa fa-users"></i>
+                <h5>Users</h5>
+                <p>1,250</p>
+            </div>
+            <div class="info-box">
+                <i class="fa fa-tasks"></i>
+                <h5>Tasks</h5>
+                <p>320</p>
+            </div>
+            <div class="info-box">
+                <i class="fa fa-check-circle"></i>
+                <h5>Tasks Completed</h5>
+                <p>200</p>
+            </div>
+            <div class="info-box">
+                <i class="fa fa-hourglass-half"></i>
+                <h5>Tasks Pending</h5>
+                <p>80</p>
+            </div>
+            <div class="info-box">
+                <i class="fa fa-list"></i>
+                <h5>Total Tasks</h5>
+                <p>280</p>
+            </div>
+            <div class="info-box">
+                <i class="fa fa-dollar-sign"></i>
+                <h5>Payments</h5>
+                <p>$45,000</p>
+            </div>
+            <div class="info-box">
+                <i class="fa fa-chart-line"></i>
+                <h5>Analytics</h5>
+                <p>95%</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Recent Activities</div>
+            <div class="card-body">
+                <p>Activity logs or recent changes made by admins will appear here.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">User Growth</div>
+            <div class="card-body">
+                <!-- Placeholder for a chart -->
+                <div id="user-growth-chart"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Financial Performance</div>
+            <div class="card-body">
+                <!-- Placeholder for a chart -->
+                <div id="financial-performance-chart"></div>
+            </div>
+        </div>
+
+            <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 Admin Dashboard. All rights reserved. | 
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a> | 
+                <a href="#">Contact Us</a>
+            </p>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#toggle-btn').on('click', function () {
+                $('#sidebar').toggleClass('collapsed');
+                $('#content').toggleClass('collapsed');
+            });
+        });
+    </script>
+</body>
+
+</html>
