@@ -1,0 +1,66 @@
+table th, table td {
+    text-align: left;
+}
+
+.bg{
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    min-width: 100px;
+    justify-content: center; 
+}
+
+.bg i {
+    margin-left: 0.5rem;
+}
+
+.badge-success {
+    background-color: #28a745;
+}
+
+.badge-warning {
+    background-color: #ffc107;
+}
+
+.badge-danger {
+    background-color: #dc3545;
+}
+
+/* For Small Screens */
+@media (max-width: 768px) {
+    table{
+        max-width: 100%;
+    }
+    table th, table td {
+        white-space: normal;
+        word-wrap: break-word;
+    }
+ 
+    .table td {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .table tr {
+        font-size: 12px;
+    }
+
+    .bg span {
+        display: none;
+    }
+
+    .bg i {
+        display: block;
+        margin-left: 0;
+        padding: 5px;
+    }
+
+    .bg{
+        min-width: 40px;
+    }
+}

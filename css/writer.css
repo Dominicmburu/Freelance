@@ -1,0 +1,247 @@
+
+.task-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #6800ac;
+    border-radius: 10px;
+}
+
+.task-section .nav-tabs .nav-link {
+    background-color: #d3d3d3;
+    color: #1b1b4d;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+}
+
+.task-section .nav-tabs .nav-link.active {
+    background-color: #013aa3;
+    color: #ffffff;
+    /* border: none; */
+}
+
+.task-item {
+    background-color: #cfcfcf;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    color: #1b1b4d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-item h6 {
+    margin: 0;
+}
+
+.task-item .btn-bid {
+    background-color: #0056ff;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.task-item .btn-bid:hover {
+    background-color: #0040cc;
+}
+
+.task-item .btn-pending,
+.task-item .btn-pending-icon {
+    background-color: #0056ff;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.task-item .btn-pending:hover,
+.task-item .btn-pending-icon:hover {
+    background-color: #0040cc;
+}
+
+.task-item .btn-delete,
+.task-item .btn-delete-icon {
+    background-color: #ff0000;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.task-item .btn-delete:hover,
+.task-item .btn-delete-icon:hover {
+    background-color: #cc0000;
+}
+
+.task-item .btn-pending-icon,
+.task-item .btn-delete-icon {
+    padding: 8px 12px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-item .btn-approved {
+    background-color: #00ff00;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.task-item .btn-approved i {
+    font-size: 18px;
+}
+
+.task-item .btn-approved:hover {
+    background-color: #00cc00;
+}
+
+.task-item .btn-completed {
+    background-color: #0056ff;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-item .btn-declined {
+    background-color: #ff0000;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.task-item .btn-declined:hover {
+    background-color: #cc0000;
+}
+
+.task-item .btn-completed:hover {
+    background-color: #0040cc;
+}
+
+/* Payment Section */
+.payment-section {
+    background-color: #00c0ff;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+}
+
+.payment-section h4 {
+    margin-bottom: 20px;
+}
+
+.payment-item {
+    background-color: #cfcfcf;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    color: #1b1b4d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.payment-item h6 {
+    margin: 0;
+}
+
+.payment-item .btn-pending {
+    background-color: #0056ff;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.payment-item .btn-paid {
+    background-color: #00ff00;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.payment-summary {
+    background-color: #8a8a8a;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.summary-item h6 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.summary-item:nth-child(2) h6 {
+    color: #000000;
+}
+
+
+@media (max-width: 768px) {
+    .task-item h6, .payment-item h6 {
+        font-size: 14px;
+    }
+
+    .task-item .btn-completed,
+    .task-item .btn-approved,
+    .task-item .btn-declined,
+    .payment-item .btn-pending,
+    .payment-item .btn-paid {
+        font-size: 12px;
+        padding: 5px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .task-item .btn-completed span,
+    .task-item .btn-approved span,
+    .task-item .btn-declined span,
+    .payment-item .btn-pending span,
+    .payment-item .btn-paid span {
+        display: none;
+    }
+
+    .task-item .btn-completed i,
+    .task-item .btn-approved i,
+    .task-item .btn-declined i,
+    .payment-item .btn-pending i,
+    .payment-item .btn-paid i {
+        display: inline-block;
+    }
+    
+    .nav-tabs .nav-item {
+        width: 45%;
+        margin: 5px;
+
+    }
+
+    .task-item h6 {
+        font-size: 14px;
+    }
+
+    .task-item .btn-bid {
+        font-size: 12px;
+        /* width: 100%; */
+        margin-top: 10px;
+    }
+
+    .task-item .btn-approved {
+        font-size: 12px;
+        padding: 5px;
+        width: 40px;
+        height: 40px;
+    }
+}

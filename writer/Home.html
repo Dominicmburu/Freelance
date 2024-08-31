@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writers Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/writer.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+
+<body>
+    <div class="circle top-circle"></div>
+    <div class="circle left-circle"></div>
+    <div class="circle right-circle"></div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark px-3 py-3">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="../images/logo.png" alt="eLearning Logo" style="width: 50px;" class="me-2">
+            <span>We Love to Help</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="Home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="Profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="Settings.html">Settings</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-white position-relative dropdown-toggle" href="#" id="notificationsDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="position-absolute translate-middle badge rounded-pill bg-danger">
+                            3 <!-- Notification count here -->
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end notification-dropdown"
+                        aria-labelledby="notificationsDropdown">
+                        <li class="notification-item">We have detected unusual activities in your account. Do not share
+                            your personal information, please.</li>
+                        <li class="notification-item">You have a 20% off for the next two tasks you post.</li>
+                        <li class="notification-item">SUMMER OFFER: Post your task above $100 to get 30% off for the
+                            next two tasks you post with us.</li>
+                        <li><button class="clear-btn">Clear</button></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-logout">Logout</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Task Sections -->
+    <div class="container task-section mt-5 mb-5">
+        <ul class="nav nav-tabs d-flex justify-content-between">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#available-tasks">Available</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#pending-tasks">Pending</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#approved-tasks">Approved</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#completed-tasks">Completed</a>
+            </li>
+        </ul>
+
+        <!-- Available Task -->
+        <div class="tab-content mt-4">
+            <div id="available-tasks" class="tab-pane fade show active">
+                <div class="task-item">
+                    <h6>01</h6>
+                    <h6>Task Name</h6>
+                    <h6>Amount</h6>
+                    <button class="btn btn-bid">BID</button>
+                </div>
+                <div class="task-item">
+                    <h6>02</h6>
+                    <h6>Task Name</h6>
+                    <h6>Amount</h6>
+                    <button class="btn btn-bid">BID</button>
+                </div>
+                <div class="task-item">
+                    <h6>03</h6>
+                    <h6>Task Name</h6>
+                    <h6>Amount</h6>
+                    <button class="btn btn-bid">BID</button>
+                </div>
+                <div class="task-item">
+                    <h6>04</h6>
+                    <h6>Task Name</h6>
+                    <h6>Amount</h6>
+                    <button class="btn btn-bid">BID</button>
+                </div>
+            </div>
+
+
+
+            <!-- pending tasks -->
+            <div id="pending-tasks" class="tab-pane fade">
+                <div class="task-item">
+                    <h6>01</h6>
+                    <h6>Task Name</h6>
+                    <h6>Amount</h6>
+                    <div class="d-flex">
+                        <button class="btn btn-pending d-none d-md-inline-block">PENDING</button>
+                        <button class="btn btn-pending-icon d-md-none">
+                            <i class="fas fa-hourglass-half"></i>
+                        </button>
+                        <button class="btn btn-delete d-none d-md-inline-block">DELETE</button>
+                        <button class="btn btn-delete-icon d-md-none">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <h6>02</h6>
+                    <h6>Task Name</h6>
+                    <h6>Amount</h6>
+                    <div class="d-flex">
+                        <button class="btn btn-pending d-none d-md-inline-block">PENDING</button>
+                        <button class="btn btn-pending-icon d-md-none">
+                            <i class="fas fa-hourglass-half"></i>
+                        </button>
+                        <button class="btn btn-delete d-none d-md-inline-block">DELETE</button>
+                        <button class="btn btn-delete-icon d-md-none">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <h6>03</h6>
+                    <h6>Task Name</h6>
+                    <h6>Amount</h6>
+                    <div class="d-flex">
+                        <button class="btn btn-pending d-none d-md-inline-block">PENDING</button>
+                        <button class="btn btn-pending-icon d-md-none">
+                            <i class="fas fa-hourglass-half"></i>
+                        </button>
+                        <button class="btn btn-delete d-none d-md-inline-block">DELETE</button>
+                        <button class="btn btn-delete-icon d-md-none">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <h6>04</h6>
+                    <h6>Task Name</h6>
+                    <h6>Amount</h6>
+                    <div class="d-flex">
+                        <button class="btn btn-pending d-none d-md-inline-block">PENDING</button>
+                        <button class="btn btn-pending-icon d-md-none">
+                            <i class="fas fa-hourglass-half"></i>
+                        </button>
+                        <button class="btn btn-delete d-none d-md-inline-block">DELETE</button>
+                        <button class="btn btn-delete-icon d-md-none">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- Approved Task -->
+            <div id="approved-tasks" class="tab-pane fade">
+                <div class="task-item">
+                    <h6>Task ID</h6>
+                    <h6>Task Name</h6>
+                    <h6>Amount</h6>
+                    <button class="btn btn-approved">
+                        <span class="d-none d-md-inline">APPROVED</span>
+                        <i class="fa fa-check d-md-none"></i>
+                    </button>
+                </div>
+                <div class="task-item">
+                    <h6>Task ID</h6>
+                    <h6>Task Name</h6>
+                    <h6>Amount</h6>
+                    <button class="btn btn-approved">
+                        <span class="d-none d-md-inline">APPROVED</span>
+                        <i class="fa fa-check d-md-none"></i>
+                    </button>
+                </div>
+                <div class="task-item">
+                    <h6>Task ID</h6>
+                    <h6>Task Name</h6>
+                    <h6>Amount</h6>
+                    <button class="btn btn-approved">
+                        <span class="d-none d-md-inline">APPROVED</span>
+                        <i class="fa fa-check d-md-none"></i>
+                    </button>
+                </div>
+                <div class="task-item">
+                    <h6>Task ID</h6>
+                    <h6>Task Name</h6>
+                    <h6>Amount</h6>
+                    <button class="btn btn-approved">
+                        <span class="d-none d-md-inline">APPROVED</span>
+                        <i class="fa fa-check d-md-none"></i>
+                    </button>
+                </div>
+            </div>
+            
+            
+            
+            
+            <!-- Completed Task -->
+            <div class="container task-section mt-5 mb-5 tab-pane fade" id="completed-tasks">
+                <div class="row">
+                    <!-- Completed Tasks Section -->
+                    <div class="col-lg-8">
+                        <div class="tab-content">
+                            <div id="completed-tasks" class="tab-pane fade show active">
+                                <div class="task-item">
+                                    <h6>Task ID</h6>
+                                    <h6>Task Name</h6>
+                                    <h6>Amount</h6>
+                                    <button class="btn btn-completed"><span>COMPLETED</span><i class="fa fa-check-circle"></i></button>
+                                    <button class="btn btn-approved"><span>APPROVED</span><i class="fa fa-thumbs-up"></i></button>
+                                </div>
+                                <div class="task-item">
+                                    <h6>Task ID</h6>
+                                    <h6>Task Name</h6>
+                                    <h6>Amount</h6>
+                                    <button class="btn btn-completed"><span>COMPLETED</span><i class="fa fa-check-circle"></i></button>
+                                    <button class="btn btn-declined"><span>DECLINED</span><i class="fa fa-times-circle"></i></button>
+                                </div>
+                                <div class="task-item">
+                                    <h6>Task ID</h6>
+                                    <h6>Task Name</h6>
+                                    <h6>Amount</h6>
+                                    <button class="btn btn-completed"><span>COMPLETED</span><i class="fa fa-check-circle"></i></button>
+                                    <button class="btn btn-approved"><span>APPROVED</span><i class="fa fa-thumbs-up"></i></button>
+                                </div>
+                                <div class="task-item">
+                                    <h6>Task ID</h6>
+                                    <h6>Task Name</h6>
+                                    <h6>Amount</h6>
+                                    <button class="btn btn-completed"><span>COMPLETED</span><i class="fa fa-check-circle"></i></button>
+                                    <button class="btn btn-approved"><span>APPROVED</span><i class="fa fa-thumbs-up"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Payment Section -->
+                    <div class="col-lg-4">
+                        <div class="payment-section">
+                            <h4 class="text-center">PAYMENT</h4>
+                            <div class="payment-item">
+                                <h6>Task ID</h6>
+                                <h6>Amount</h6>
+                                <button class="btn btn-pending"><i class="fa fa-clock"></i></button>
+                            </div>
+                            <div class="payment-item">
+                                <h6>Task ID</h6>
+                                <h6>Amount</h6>
+                                <button class="btn btn-paid"><i class="fa fa-check"></i></button>
+                            </div>
+                            <div class="payment-item">
+                                <h6>Task ID</h6>
+                                <h6>Amount</h6>
+                                <button class="btn btn-pending"><i class="fa fa-clock"></i></button>
+                            </div>
+                            <div class="payment-summary">
+                                <div class="summary-item">
+                                    <h6>APPROVED AMOUNT \=</h6>
+                                    <h6>$140</h6>
+                                </div>
+                                <div class="summary-item">
+                                    <h6>TOTAL \=</h6>
+                                    <h6>$540</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <!-- Customer Support Chat Section -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            Chat Support
+            <i class="fa-solid fa-circle-xmark close-chat"></i>
+            <!-- <span class="close-chat">&times;</span> -->
+        </div>
+        <div class="chat-messages">
+            <div class="message">Hello</div>
+            <div class="message">How can I assist you?</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Write something...">
+            <button type="button"><i class="fa fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <button class="chat-toggle" id="chatToggle">
+        Chat with us
+        <i class="fa fa-times"></i>
+    </button>
+
+    <!-- Footer Section -->
+    <footer class="text-white pt-5" style="background-color: #1b1b8f; padding: 20px 0;">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <!-- Legal Section -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-4">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Terms and Conditions</a></li>
+                        <li><a href="#" class="text-white">Refund Policy</a></li>
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Other Section -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-4">Other</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Section -->
+                <div class="col-md-4">
+                    <h5 class="mb-4">Social Media</h5>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="#"><img src="../images/discord.png" alt="Discord" class="img-fluid" style="width: 40px;"></a>
+                        <a href="#"><img src="../images/whatsapp.png" alt="WhatsApp" class="img-fluid" style="width: 40px;"></a>
+                        <a href="#"><img src="../images/X.png" alt="X" class="img-fluid" style="width: 40px;"></a>
+                        <a href="#"><img src="../images/ig.png" alt="Instagram" class="img-fluid" style="width: 40px;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom text-center py-3 " style="background-color: #8a41b5;">
+        <p class="mb-0">WE LOVE TO HELP © COPYRIGHT 2024</p>
+    </div>
+
+<script src="../js/home.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
