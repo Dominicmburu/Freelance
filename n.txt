@@ -5,7 +5,7 @@ Overview: A summary of key metrics like the number of users, tasks completed, ta
 Graphs and Charts: Visual representations of data, such as user growth, task completion rates, and financial performance over time.
 Quick Links: Shortcuts to frequently accessed sections like user management or task management.
 2. User Management
-User List: A table of all users (writers, clients, etc.) with the ability to search, filter, and sort by different criteria (e.g., username, role, status).
+User List: A table of all users (writers, clients, etc) with the ability to search, filter, and sort by different criteria (e.g., username, role, status).
 User Profiles: Detailed information about each user, including contact details, activity history, and any tasks they’ve completed or have pending.
 Actions: Options to edit user details, reset passwords, activate/deactivate accounts, or delete users.
 3. Task Management
@@ -16,14 +16,17 @@ Actions: Options to edit, reassign, approve, or delete tasks.
 Payment History: A record of all transactions, including task payments, user withdrawals, and refunds.
 Payouts: Manage and approve payouts to writers or other users.
 Financial Reports: Downloadable reports for financial tracking, including monthly revenue and expenses.
+
 5. Content Management
 Announcements: Create, edit, or delete announcements for users.
 Help Articles: Manage the content for help and FAQ sections, including creating new articles or updating existing ones.
 Blog/News: If your platform has a blog or news section, manage posts here.
+
 6. Settings
 Platform Settings: Configure site-wide settings like payment methods, notification preferences, and user permissions.
 Security Settings: Manage security features like two-factor authentication, password policies, and login restrictions.
 API Access: Manage API keys and integrations with other platforms or services.
+
 7. Reports and Analytics
 User Activity Reports: Track user engagement, such as login history, tasks completed, and interaction frequency.
 Revenue Reports: Detailed breakdowns of revenue sources, payment processing, and financial performance.

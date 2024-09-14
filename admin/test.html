@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <style>
+        .payment-section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-container {
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            overflow-x: auto;
+        }
+
+        .table-container table {
+            width: 100%;
+            background-color: #1d2b64;
+            color: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table-container table th,
+        .table-container table td {
+            padding: 15px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .table-container table th {
+            background-color: #0b1033;
+        }
+
+        .action-buttons i {
+            cursor: pointer;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .btn-download {
+            background-color: #1d2b64;
+            color: white;
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .btn-download:hover {
+            background-color: #0b1033;
+            color: #fff;
+        }
+
+        .btn-update {
+            background-color: #1d2b64;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        /* Modal Styles */
+        #paymentDetailsModal .modal-header,
+        #payoutDetailsModal .modal-header {
+            background-color: #1d2b64;
+            color: white;
+        }
+
+        #paymentDetailsModal .modal-body,
+        #payoutDetailsModal .modal-body {
+            background-color: #f5f5f5;
+        }
+
+        /* Filters */
+        .filter-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .filter-section input,
+        .filter-section select {
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .filter-section {
+                flex-direction: column;
+            }
+
+            .table-container table th,
+            .table-container table td {
+                padding: 10px;
+            }
+
+            .btn-download {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            /* Footer */
+            .footer {
+                font-size: 0.8em;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .footer a {
+            color: #1d2b64;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .task-list-group {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header for Small Screens -->
+    <div class="header shadow">
+        Payment Management
+        <i class="fa fa-bars toggle-btn" id="toggle-btn"></i>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a class="navbar-brand" href="#">Admin Dashboard</a>
+        <nav class="nav flex-column">
+            <a class="nav-link" href="dashboard.html">Dashboard</a>
+            <a class="nav-link" href="users.html">User Management</a>
+            <a class="nav-link" href="tasks.html">Task Management</a>
+            <a class="nav-link active" href="payments.html">Payment Management</a>
+            <a class="nav-link" href="content.html">Content Management</a>
+            <a class="nav-link" href="reports.html">Reports & Analytics</a>
+            <a class="nav-link" href="settings.html">Settings</a>
+            <a class="nav-link" href="support.html">Support Management</a>
+            <a class="nav-link" href="audit.html">Audit Logs</a>
+            <a class="nav-link" href="access_control.html">Access Control</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content" id="content">
+        <h1 class="mt-4">Payment Management</h1>
+
+        <!-- Payment History Section -->
+        <div class="payment-section">
+            <h2>Payment History</h2>
+            <!-- Filter Section for Payment History -->
+            <div class="filter-section">
+                <input type="text" id="search-user" class="form-control" placeholder="Search User">
+                <select id="filter-task-type" class="form-select">
+                    <option value="">All Task Types</option>
+                    <option value="Task Payment">Task Payment</option>
+                    <option value="Withdrawal">Withdrawal</option>
+                    <option value="Refund">Refund</option>
+                </select>
+                <select id="filter-status" class="form-select">
+                    <option value="">All Statuses</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Refunded">Refunded</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>User</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="payment-history-body">
+                        <!-- Payment history rows will be dynamically populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Payouts Section -->
+        <div class="payment-section">
+            <h2>Payouts</h2>
+            <!-- Filter Section for Payouts -->
+            <div class="filter-section">
+                <input type="text" id="search-payout-user" class="form-control" placeholder="Search User">
+                <input type="date" id="filter-date" class="form-control">
+            </div>
+            <div class="table-container">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Payout ID</th>
+                            <th>Amount</th>
+                            <th>Requested By</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="payouts-body">
+                        <!-- Payout requests will be dynamically populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Payout Details Modal -->
+        <div class="modal fade" id="payoutDetailsModal" tabindex="-1" aria-labelledby="payoutDetailsModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="payoutDetailsModalLabel">Payout Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Payout ID:</strong> <span id="payout-id"></span></p>
+                        <p><strong>Total Approved Amount:</strong> $<span id="total-withdrawal"></span></p>
+                        <h6>Tasks Approved for Withdrawal</h6>
+                        <ul id="task-list" class="list-group task-list-group">
+                            <!-- Task details will be dynamically populated here -->
+                        </ul>
+                        <button class="btn-update" id="approve-payout-btn">Update Approved Amount</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Refund Modal -->
+        <div class="modal fade" id="refundModal" tabindex="-1" aria-labelledby="refundModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="refundModalLabel">Process Refund</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Transaction ID:</strong> <span id="refund-transaction-id"></span></p>
+                        <p><strong>Amount:</strong> <input type="number" id="refund-amount" class="form-control" value="0.00"></p>
+                        <p><strong>Reason for Refund:</strong></p>
+                        <textarea id="refund-reason" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="confirm-refund-btn">Confirm Refund</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer mt-4">
+            <p>&copy; 2024 Admin Dashboard. All rights reserved. |
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="#">Contact Us</a>
+            </p>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Sample payment history and payouts data with tasks
+            const paymentHistory = [
+                { id: 'TXN001', amount: '$500', date: '2024-09-01', type: 'Task Payment', status: 'Completed', user: 'John Doe' },
+                { id: 'TXN002', amount: '$750', date: '2024-09-03', type: 'Withdrawal', status: 'Pending', user: 'Jane Smith' },
+                { id: 'TXN003', amount: '$100', date: '2024-09-04', type: 'Refund', status: 'Refunded', user: 'Michael Lee' },
+            ];
+
+            const payouts = [
+                {
+                    id: 'P001', amount: '$300', requestedBy: 'John Doe', status: 'Approved', date: '2024-09-05',
+                    tasks: [
+                        { name: 'Task 1', amount: 100, status: 'Paid' },
+                        { name: 'Task 2', amount: 200, status: 'Paid' }
+                    ]
+                },
+                {
+                    id: 'P002', amount: '$150', requestedBy: 'Jane Smith', status: 'Pending', date: '2024-09-06',
+                    tasks: [
+                        { name: 'Task 3', amount: 100, status: 'Paid' },
+                        { name: 'Task 4', amount: 50, status: 'Refunded' }
+                    ]
+                }
+            ];
+
+            function renderPaymentHistory(filteredPayments = paymentHistory) {
+                const paymentHistoryBody = $('#payment-history-body');
+                paymentHistoryBody.empty();
+
+                filteredPayments.forEach(payment => {
+                    const row = `
+                        <tr>
+                            <td>${payment.id}</td>
+                            <td>${payment.amount}</td>
+                            <td>${payment.date}</td>
+                            <td>${payment.type}</td>
+                            <td>${payment.status}</td>
+                            <td>${payment.user}</td>
+                            <td class="action-buttons">
+                                <i class="fa fa-eye view-payment" title="View Details" data-payment-id="${payment.id}"></i>
+                                <i class="fa fa-trash" title="Delete"></i>
+                            </td>
+                        </tr>
+                    `;
+                    paymentHistoryBody.append(row);
+                });
+            }
+
+            function renderPayouts(filteredPayouts = payouts) {
+                const payoutsBody = $('#payouts-body');
+                payoutsBody.empty();
+
+                filteredPayouts.forEach(payout => {
+                    const row = `
+                        <tr>
+                            <td>${payout.id}</td>
+                            <td>${payout.amount}</td>
+                            <td>${payout.requestedBy}</td>
+                            <td>${payout.status}</td>
+                            <td>${payout.date}</td>
+                            <td class="action-buttons">
+                                <i class="fa fa-eye view-payout" title="View Details" data-payout-id="${payout.id}"></i>
+                            </td>
+                        </tr>
+                    `;
+                    payoutsBody.append(row);
+                });
+            }
+
+            function showPayoutDetails(payoutId) {
+                const payout = payouts.find(p => p.id === payoutId);
+                if (payout) {
+                    $('#payout-id').text(payout.id);
+
+                    let totalWithdrawal = 0;
+                    const taskList = payout.tasks.map(task => {
+                        const taskAmount = task.status === 'Paid' ? task.amount : 0;
+                        totalWithdrawal += taskAmount;
+
+                        return `
+                            <li class="list-group-item">
+                                <strong>${task.name}</strong>: $${task.amount} - ${task.status}
+                            </li>
+                        `;
+                    }).join('');
+
+                    $('#task-list').html(taskList);
+                    $('#total-withdrawal').text(totalWithdrawal);
+
+                    $('#payoutDetailsModal').modal('show');
+                }
+            }
+
+            // Event listeners for filtering payments and payouts
+            $('#search-user, #filter-task-type, #filter-status').on('input change', function () {
+                const searchUser = $('#search-user').val().toLowerCase();
+                const taskType = $('#filter-task-type').val();
+                const status = $('#filter-status').val();
+
+                const filteredPayments = paymentHistory.filter(payment => {
+                    const matchesUser = payment.user.toLowerCase().includes(searchUser);
+                    const matchesTaskType = taskType ? payment.type === taskType : true;
+                    const matchesStatus = status ? payment.status === status : true;
+                    return matchesUser && matchesTaskType && matchesStatus;
+                });
+
+                renderPaymentHistory(filteredPayments);
+            });
+
+            $('#search-payout-user, #filter-date').on('input change', function () {
+                const searchUser = $('#search-payout-user').val().toLowerCase();
+                const date = $('#filter-date').val();
+
+                const filteredPayouts = payouts.filter(payout => {
+                    const matchesUser = payout.requestedBy.toLowerCase().includes(searchUser);
+                    const matchesDate = date ? payout.date === date : true;
+                    return matchesUser && matchesDate;
+                });
+
+                renderPayouts(filteredPayouts);
+            });
+
+            // Event listeners for viewing payment and payout details
+            $(document).on('click', '.view-payment', function () {
+                const paymentId = $(this).data('payment-id');
+                const payment = paymentHistory.find(p => p.id === paymentId);
+                if (payment) {
+                    $('#transaction-id').text(payment.id);
+                    $('#transaction-amount').text(payment.amount);
+                    $('#transaction-type').text(payment.type);
+                    $('#transaction-status').text(payment.status);
+                    $('#transaction-date').text(payment.date);
+                    $('#transaction-user').text(payment.user);
+                    $('#paymentDetailsModal').modal('show');
+                }
+            });
+
+            $(document).on('click', '.view-payout', function () {
+                const payoutId = $(this).data('payout-id');
+                showPayoutDetails(payoutId);
+            });
+
+            // Event listener for updating the approved amount
+            $('#approve-payout-btn').on('click', function () {
+                const approvedAmount = $('#total-withdrawal').text();
+                alert(`Approved amount updated to $${approvedAmount}`);
+            });
+
+            // Event listener for processing refund
+            $(document).on('click', '.refund-payout', function () {
+                const payoutId = $(this).data('payout-id');
+                const payout = payouts.find(p => p.id === payoutId);
+                if (payout) {
+                    $('#refund-transaction-id').text(payout.id);
+                    $('#refund-amount').val(payout.amount.replace('$', ''));
+                    $('#refundModal').modal('show');
+                }
+            });
+
+            $('#confirm-refund-btn').on('click', function () {
+                const refundId = $('#refund-transaction-id').text();
+                const refundAmount = $('#refund-amount').val();
+                const refundReason = $('#refund-reason').val();
+
+                if (confirm(`Confirm refund of $${refundAmount} for Payout ID ${refundId}?`)) {
+                    const payout = payouts.find(p => p.id === refundId);
+                    payout.status = 'Refunded';
+                    payout.amount = `$${refundAmount}`;
+                    alert('Refund processed successfully!');
+                    renderPayouts();
+                    $('#refundModal').modal('hide');
+                }
+            });
+
+            // Initialize the tables with data
+            renderPaymentHistory();
+            renderPayouts();
+
+            // Placeholder download actions
+            $('.btn-download').on('click', function () {
+                alert('Report downloaded successfully.');
+            });
+        });
+    </script>
+</body>
+
+</html>
