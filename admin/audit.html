@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Logs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/audit.css">
+</head>
+
+<body>
+
+    <!-- Header for Small Screens -->
+    <div class="header shadow">
+        Audit Logs
+        <i class="fa fa-bars toggle-btn" id="toggle-btn"></i>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a class="navbar-brand" href="#">Admin Dashboard</a>
+        <nav class="nav flex-column">
+            <a class="nav-link" href="dashboard.html">Dashboard</a>
+            <a class="nav-link" href="users.html">User Management</a>
+            <a class="nav-link" href="tasks.html">Task Management</a>
+            <a class="nav-link" href="payments.html">Payment Management</a>
+            <a class="nav-link" href="content.html">Content Management</a>
+            <a class="nav-link" href="reports.html">Reports & Analytics</a>
+            <a class="nav-link" href="settings.html">Settings</a>
+            <a class="nav-link" href="support.html">Support Management</a>
+            <a class="nav-link active" href="audit.html">Audit Logs</a>
+            <a class="nav-link" href="access_control.html">Access Control</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content" id="content">
+        <h1 class="mt-4">Audit Logs</h1>
+
+        <!-- System Logs Section -->
+        <div class="content-section">
+            <h2>System Logs</h2>
+            <div class="table-container">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Action</th>
+                            <th>User</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="system-logs-body">
+                        <!-- System logs will be dynamically populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- User Logs Section -->
+        <div class="content-section">
+            <h2>User Logs</h2>
+            <div class="table-container">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Action</th>
+                            <th>User</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-logs-body">
+                        <!-- User logs will be dynamically populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- View Log Modal -->
+        <div class="modal fade" id="viewLogModal" tabindex="-1" aria-labelledby="viewLogModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewLogModalLabel">Log Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Log ID:</strong> <span id="log-id"></span></p>
+                        <p><strong>Action:</strong> <span id="log-action"></span></p>
+                        <p><strong>User:</strong> <span id="log-user"></span></p>
+                        <p><strong>Date:</strong> <span id="log-date"></span></p>
+                        <p><strong>Details:</strong> <span id="log-details"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer mt-4">
+            <p>&copy; 2024 Admin Dashboard. All rights reserved. |
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="#">Contact Us</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/audit.js"></script>
+</body>
+
+</html>

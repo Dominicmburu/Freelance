@@ -31,17 +31,21 @@ API Access: Manage API keys and integrations with other platforms or services.
 User Activity Reports: Track user engagement, such as login history, tasks completed, and interaction frequency.
 Revenue Reports: Detailed breakdowns of revenue sources, payment processing, and financial performance.
 Task Performance Reports: Analyze how tasks are being handled, including average completion time, approval rates, and user satisfaction.
+
 8. Support Management
 Support Tickets: View and manage all support requests submitted by users.
 Chat Logs: Review chat logs between users and customer support.
 User Feedback: Collect and analyze feedback from users to improve the platform.
+
 9. Notifications
-Notification Settings: Set up and manage automated notifications for various events (e.g., new task assigned, payment received).
+Notification Settings: Set up and manage automated notifications for various events (e.g., new task assigned, payment received, payment refunded, task reassigned).
 Broadcast Messages: Send messages or alerts to all users or specific groups.
+
 10. Audit Logs
 System Logs: Track all actions taken within the admin panel, including who did what and when.
 User Logs: Detailed logs of user activity, including logins, task submissions, and payments.
+
 11. Access Control
-Role Management: Define different roles (admin, moderator, etc.) and assign permissions.
+Role Management: Define different roles (admin(can manage moderator, clients and writers), moderator(can manage clients and writers), superadmin(can manage admins, moderator, clients and writers - create, delete, ......)) and assign permissions.
 User Permissions: Manage what each user role is allowed to do on the platform.
 These pages will help you effectively manage the various aspects of your platform, ensuring smooth operations and a great user experience.

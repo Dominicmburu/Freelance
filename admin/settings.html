@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+
+<body>
+
+    <!-- Header for Small Screens -->
+    <div class="header shadow">
+        Settings Management
+        <i class="fa fa-bars toggle-btn" id="toggle-btn"></i>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a class="navbar-brand" href="#">Admin Dashboard</a>
+        <nav class="nav flex-column">
+            <a class="nav-link" href="dashboard.html">Dashboard</a>
+            <a class="nav-link" href="users.html">User Management</a>
+            <a class="nav-link" href="tasks.html">Task Management</a>
+            <a class="nav-link" href="payments.html">Payment Management</a>
+            <a class="nav-link" href="content.html">Content Management</a>
+            <a class="nav-link" href="reports.html">Reports & Analytics</a>
+            <a class="nav-link active" href="settings.html">Settings</a>
+            <a class="nav-link" href="support.html">Support Management</a>
+            <a class="nav-link" href="audit.html">Audit Logs</a>
+            <a class="nav-link" href="access_control.html">Access Control</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content" id="content">
+        <h1 class="mt-4">Settings</h1>
+
+        <!-- Platform Settings Section -->
+        <div class="settings-section">
+            <h2>Platform Settings</h2>
+            <form id="platform-settings-form">
+                <div class="mb-3">
+                    <label for="payment-method">Default Payment Method</label>
+                    <select id="payment-method" class="form-control" required>
+                        <option value="credit-card">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="bank-transfer">Bank Transfer</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="notifications">Notification Preferences</label>
+                    <select id="notifications" class="form-control" required>
+                        <option value="email">Email</option>
+                        <option value="sms">SMS</option>
+                        <option value="push">Push Notifications</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="permissions">Default User Permissions</label>
+                    <select id="permissions" class="form-control" required>
+                        <option value="admin">Admin</option>
+                        <option value="editor">Editor</option>
+                        <option value="viewer">Viewer</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-save">Save Platform Settings</button>
+            </form>
+        </div>
+
+        <!-- Security Settings Section -->
+        <div class="settings-section mt-4">
+            <h2>Security Settings</h2>
+            <form id="security-settings-form">
+                <div class="mb-3">
+                    <label for="two-factor-auth">Two-Factor Authentication</label>
+                    <select id="two-factor-auth" class="form-control" required>
+                        <option value="enabled">Enabled</option>
+                        <option value="disabled">Disabled</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password-policy">Password Policy</label>
+                    <select id="password-policy" class="form-control" required>
+                        <option value="strong">Strong (min. 8 chars, uppercase, number, symbol)</option>
+                        <option value="medium">Medium (min. 6 chars, uppercase, number)</option>
+                        <option value="weak">Weak (min. 6 chars)</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="login-restrictions">Login Restrictions</label>
+                    <select id="login-restrictions" class="form-control" required>
+                        <option value="ip-restriction">IP Restriction</option>
+                        <option value="location-restriction">Location-Based Restriction</option>
+                        <option value="none">None</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-save">Save Security Settings</button>
+            </form>
+        </div>
+
+        <!-- API Access Section -->
+        <div class="settings-section mt-4">
+            <h2>API Access</h2>
+            <form id="api-access-form">
+                <div class="mb-3">
+                    <label for="api-key">API Key</label>
+                    <input type="text" class="form-control" id="api-key" value="12345-abcde-67890-fghij" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="api-access">API Access</label>
+                    <select id="api-access" class="form-control" required>
+                        <option value="read-only">Read-Only</option>
+                        <option value="read-write">Read & Write</option>
+                        <option value="full-access">Full Access</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-save">Update API Access</button>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 Admin Dashboard. All rights reserved. |
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="#">Contact Us</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/settings.js"></script>
+</body>
+
+</html>

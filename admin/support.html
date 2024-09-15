@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/support.css">
+</head>
+
+<body>
+
+    <!-- Header for Small Screens -->
+    <div class="header shadow">
+        Support Management
+        <i class="fa fa-bars toggle-btn" id="toggle-btn"></i>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a class="navbar-brand" href="#">Admin Dashboard</a>
+        <nav class="nav flex-column">
+            <a class="nav-link" href="dashboard.html">Dashboard</a>
+            <a class="nav-link" href="users.html">User Management</a>
+            <a class="nav-link" href="tasks.html">Task Management</a>
+            <a class="nav-link" href="payments.html">Payment Management</a>
+            <a class="nav-link" href="content.html">Content Management</a>
+            <a class="nav-link" href="reports.html">Reports & Analytics</a>
+            <a class="nav-link" href="settings.html">Settings</a>
+            <a class="nav-link active" href="support.html">Support Management</a>
+            <a class="nav-link" href="audit.html">Audit Logs</a>
+            <a class="nav-link" href="access_control.html">Access Control</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content" id="content">
+        <h1 class="mt-4">Support Management</h1>
+
+        <!-- Support Tickets Section -->
+        <div class="support-section">
+            <h2>Support Tickets</h2>
+            <div class="table-container">
+                <table class="table table-striped table-hover" id="support-tickets-table">
+                    <thead>
+                        <tr>
+                            <th data-sort="ticket-id">Ticket ID</th>
+                            <th>User</th>
+                            <th>Issue</th>
+                            <th data-sort="date">Date Submitted <i class="fas fa-sort"></i></th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="support-tickets-body">
+                        <!-- Dynamic Rows Here -->
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn-manage" id="download-tickets">Download All Tickets (CSV)</button>
+        </div>
+
+        <!-- Chat Logs Section -->
+        <div class="support-section mt-4">
+            <h2>Chat Logs</h2>
+            <div class="table-container">
+                <table class="table table-striped table-hover" id="chat-logs-table">
+                    <thead>
+                        <tr>
+                            <th>Chat ID</th>
+                            <th>User</th>
+                            <th>Support Agent</th>
+                            <th data-sort="date">Date <i class="fas fa-sort"></i></th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="chat-logs-body">
+                        <!-- Dynamic Rows Here -->
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn-manage" id="download-chats">Download All Chats (TXT)</button>
+        </div>
+
+        <!-- User Feedback Section -->
+        <div class="support-section mt-4">
+            <h2>User Feedback</h2>
+            <div class="table-container">
+                <table class="table table-striped table-hover" id="user-feedback-table">
+                    <thead>
+                        <tr>
+                            <th>Feedback ID</th>
+                            <th>User</th>
+                            <th>Feedback</th>
+                            <th data-sort="date">Date Submitted <i class="fas fa-sort"></i></th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-feedback-body">
+                        <!-- Dynamic Rows Here -->
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn-manage" id="download-feedback">Download All Feedback (PDF)</button>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer mt-4">
+            <p>&copy; 2024 Admin Dashboard. All rights reserved. |
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="#">Contact Us</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Modals -->
+
+    <!-- Manage Ticket Modal -->
+    <div class="modal fade" id="manageTicketModal" tabindex="-1" aria-labelledby="manageTicketModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="manageTicketModalLabel">Manage Support Ticket</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Ticket ID:</strong> <span id="ticket-id"></span></p>
+                    <p><strong>User:</strong> <span id="ticket-user"></span></p>
+                    <p><strong>Issue:</strong> <span id="ticket-issue"></span></p>
+                    <p><strong>Status:</strong>
+                        <select id="ticket-status" class="form-select">
+                            <option value="Open">Open</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="update-status-btn">Update Status</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Chat Modal -->
+    <div class="modal fade" id="viewChatModal" tabindex="-1" aria-labelledby="viewChatModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewChatModalLabel">Chat Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Chat ID:</strong> <span id="chat-id"></span></p>
+                    <p><strong>User:</strong> <span id="chat-user"></span></p>
+                    <p><strong>Agent:</strong> <span id="chat-agent"></span></p>
+                    <p><strong>Date:</strong> <span id="chat-date"></span></p>
+                    <p><strong>Chat Transcript:</strong></p>
+                    <div id="chat-transcript" style="height: 150px; overflow-y: auto; background-color: #f1f1f1; padding: 10px; border-radius: 5px;">
+                        <!-- Chat transcript goes here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Feedback Modal -->
+    <div class="modal fade" id="viewFeedbackModal" tabindex="-1" aria-labelledby="viewFeedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewFeedbackModalLabel">User Feedback</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Feedback ID:</strong> <span id="feedback-id"></span></p>
+                    <p><strong>User:</strong> <span id="feedback-user"></span></p>
+                    <p><strong>Feedback:</strong> <span id="feedback-text"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/support.js"></script>
+</body>
+
+</html>

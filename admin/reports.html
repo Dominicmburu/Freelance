@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports & Analytics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/report.css">
+</head>
+
+<body>
+
+    <!-- Header for Small Screens -->
+    <div class="header shadow">
+        Reports & Analytics
+        <i class="fa fa-bars toggle-btn" id="toggle-btn"></i>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a class="navbar-brand" href="#">Admin Dashboard</a>
+        <nav class="nav flex-column">
+            <a class="nav-link" href="dashboard.html">Dashboard</a>
+            <a class="nav-link" href="users.html">User Management</a>
+            <a class="nav-link" href="tasks.html">Task Management</a>
+            <a class="nav-link" href="payments.html">Payment Management</a>
+            <a class="nav-link" href="content.html">Content Management</a>
+            <a class="nav-link active" href="reports.html">Reports & Analytics</a>
+            <a class="nav-link" href="settings.html">Settings</a>
+            <a class="nav-link" href="support.html">Support Management</a>
+            <a class="nav-link" href="audit.html">Audit Logs</a>
+            <a class="nav-link" href="access_control.html">Access Control</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content" id="content">
+        <h1 class="mt-4">Reports & Analytics</h1>
+
+        <!-- User Activity Reports Section -->
+        <div class="report-section">
+            <h2>User Activity Reports</h2>
+            <div class="table-container">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Login History</th>
+                            <th>Tasks Completed</th>
+                            <th>Interaction Frequency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample Data -->
+                        <tr>
+                            <td>U001</td>
+                            <td>2024-09-15, 2024-09-10, 2024-09-07</td>
+                            <td>12</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>U002</td>
+                            <td>2024-09-12, 2024-09-08, 2024-09-01</td>
+                            <td>8</td>
+                            <td>Medium</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn-generate" id="download-user-activity">Download Full User Activity Report (CSV)</button>
+        </div>
+
+        <!-- Revenue Reports Section -->
+        <div class="report-section mt-4">
+            <h2>Revenue Reports</h2>
+            <div class="table-container">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Source</th>
+                            <th>Revenue</th>
+                            <th>Payment Processing Fees</th>
+                            <th>Net Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample Data -->
+                        <tr>
+                            <td>Task Payments</td>
+                            <td>$5,000</td>
+                            <td>$500</td>
+                            <td>$4,500</td>
+                        </tr>
+                        <tr>
+                            <td>Subscription Fees</td>
+                            <td>$2,000</td>
+                            <td>$100</td>
+                            <td>$1,900</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn-generate" id="download-revenue-report">Download Full Revenue Report (PDF)</button>
+        </div>
+
+        <!-- Task Performance Reports Section -->
+        <div class="report-section mt-4">
+            <h2>Task Performance Reports</h2>
+            <div class="table-container">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Task ID</th>
+                            <th>Average Completion Time</th>
+                            <th>Approval Rate</th>
+                            <th>User Satisfaction</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample Data -->
+                        <tr>
+                            <td>T001</td>
+                            <td>3 days</td>
+                            <td>95%</td>
+                            <td>4.7/5</td>
+                        </tr>
+                        <tr>
+                            <td>T002</td>
+                            <td>2 days</td>
+                            <td>89%</td>
+                            <td>4.5/5</td>
+                        </tr>
+                        <tr>
+                            <tr>
+                                <td>T001</td>
+                                <td>3 days</td>
+                                <td>95%</td>
+                                <td>4.7/5</td>
+                            </tr>
+                            <tr>
+                                <td>T002</td>
+                                <td>2 days</td>
+                                <td>89%</td>
+                                <td>4.5/5</td>
+                            </tr>
+                            <tr>
+                                <td>T001</td>
+                                <td>3 days</td>
+                                <td>95%</td>
+                                <td>4.7/5</td>
+                            </tr>
+                            <tr>
+                                <td>T002</td>
+                                <td>2 days</td>
+                                <td>89%</td>
+                                <td>4.5/5</td>
+                            </tr>
+                        </tr>
+                            <td>T001</td>
+                            <td>3 days</td>
+                            <td>95%</td>
+                            <td>4.7/5</td>
+                        </tr>
+                        <tr>
+                            <td>T002</td>
+                            <td>2 days</td>
+                            <td>89%</td>
+                            <td>4.5/5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn-generate" id="download-task-performance">Download Full Task Performance Report (Excel)</button>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 Admin Dashboard. All rights reserved. |
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="#">Contact Us</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/report.js"></script>
+</body>
+
+</html>

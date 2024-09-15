@@ -1,0 +1,25 @@
+.settings-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-save {
+    background-color: #1d2b64;
+    color: white;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-save:hover {
+    background-color: #0b1033;
+    color: #fff;
+}
+
+label {
+    font-weight: bold;
+}
